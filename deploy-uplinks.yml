@@ -1,0 +1,7 @@
+---
+- hosts: all
+  connection: local
+  strategy: free
+  roles:
+    - { role: login, tags: [ 'login' ] }
+    - { role: uplinks, tags: [ 'login', 'uplinks'] }

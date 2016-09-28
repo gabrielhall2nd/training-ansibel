@@ -1,0 +1,11 @@
+---
+uplink_interface:
+  - {int: "ethernet1/1", ip: 192.168.1.2/30, des: To spine_1}
+  - {int: "ethernet1/2", ip: 192.168.2.2/30, des: To spine_2}
+
+hostports:
+   - { int: "ethernet1/3", des: New-HP, vlan: 10, state: present }
+   - { int: "ethernet1/5", des: ESXI-1, vlan: 20, state: present }
+   - { int: "ethernet1/6", des: ESXI-2, vlan: 20, state: present }
+   - { int: "ethernet1/7", des: --, vlan: 1, state: absent}
+   - { int: "ethernet1/8", des: --, vlan: 1, state: absent}

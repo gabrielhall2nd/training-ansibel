@@ -1,0 +1,21 @@
+---
+# tasks file for hostports
+- name: Ensure that port is in layer 2 mode
+  nxos_interface:
+    provider: "{{ creds }}"
+    interface: "{{ item.int }}"
+    description: "{{ item.des }}"
+    mode: layer2
+    state: "{{ item.state }}"
+  with_items: "{{hostports}}"
+  notify:
+    - Save Config
+
+- nxos_switchport:
+    provider: "{{ creds }}"
+    interface: "{{ item.int }}"
+    mode: access
+    access_vlan: "{{ item.vlan }}"
+  with_items: "{{hostports}}"
+  notify:
+    - Save Config

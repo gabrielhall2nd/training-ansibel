@@ -1,0 +1,7 @@
+---
+# handlers file for baseconfig
+- name: Save Config
+  nxos_config:
+    provider: "{{ creds }}"
+    lines:
+      - 'copy run start'

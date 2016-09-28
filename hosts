@@ -1,0 +1,5 @@
+[all:vars]
+ansible_connection = local
+
+[leafs]
+n9k-1

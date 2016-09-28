@@ -1,0 +1,10 @@
+---
+# vars file for vlans
+vlans:
+    - { vlan_id: 10, name: web, state: present }
+    - { vlan_id: 20, name: app, state: present }
+    - { vlan_id: 30, name: db, state: present }
+    - { vlan_id: 40, name: ESXI, state: absent }
+    - { vlan_id: 60, name: Openstack, state: present }
+    - { vlan_id: 99, name: native_vlan, state: present }
+    - { vlan_id: 800, name: new-v800, state: present }

@@ -1,0 +1,8 @@
+{% for uplink in uplink_interface %}
+interface {{ uplink.int }}
+  no switchport
+  mtu 9216
+  ip address {{ uplink.ip }}
+  description {{ uplink.des }}
+  no shutdown
+{% endfor %}

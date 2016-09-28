@@ -1,0 +1,9 @@
+---
+# tasks file for uplinks
+- name: configure uplinks template
+  nxos_template:
+    provider: "{{ creds }}"
+    src: uplinks.j2
+    backup: no
+  notify:
+    - Save Config

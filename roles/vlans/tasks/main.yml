@@ -1,0 +1,7 @@
+---
+# tasks file for vlans
+-   name: configuring the vlans
+    nxos_vlan: vlan_id={{ item.vlan_id }}  name={{ item.name }} state={{ item.state }}  provider="{{ creds }}"
+    with_items: "{{vlans}}"
+    notify:
+      - Save Config
